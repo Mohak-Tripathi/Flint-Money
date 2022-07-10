@@ -34,5 +34,4 @@ const Header = ({value, setValue}) => {
   </div>
   )
 }
-
 export default Header

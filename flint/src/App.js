@@ -1,17 +1,24 @@
-import moment from 'moment';
-import React, {useState} from 'react';
+
+import React from 'react';
 import './App.css';
-import Cal from './Calender/Cal.jsx'
+import Cal from './Calender/Cal'
+import {Routes,Route} from "react-router-dom";
+
+
+
 
 function App() {
-  const [value, setValue] = useState(moment());
  
+
   return (
     <div className="App">
 
-     
-      <Cal value={value} onChange={setValue}/>  
+      <Routes>
+        <Route path="/" element={<Cal/>}/>
+      <Route path="/:year/:month" element={<Cal/> }/>
+      <Route path="/:year" element={<Cal/> }/>
 
+      </Routes>
     </div>
   );
 }

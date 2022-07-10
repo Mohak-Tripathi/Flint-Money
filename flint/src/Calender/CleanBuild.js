@@ -11,7 +11,7 @@ const CleanBuild = (value) => {
     calender.push(
       Array(7)
         .fill(0)
-        .map(() => day.add(1, "day").clone())
+        .map(() =>  day.add(1, "day").clone())
     );
   }
 

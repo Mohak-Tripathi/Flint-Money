@@ -5,23 +5,26 @@ function isRightSelected(day, value) {
   export function isBeforeToday(day) {
     return day.isBefore(new Date(), "day");
   }
+  export function isAfterToday(day) {
+    return day.isAfter(new Date(), "day");
+  }
 
   function isToday(day) {
     return day.isSame(new Date(), "day");
   }
 
 export default  function dayStyles(day, value) {
-    if (isBeforeToday(day)) {
-      return "before";
-    }
+  
+  if (isBeforeToday(day)) {
+    return "before";
+  }
+  
+  if (isToday(day)) {
+    return "today";
+  }
 
-    if (isToday(day)) {
-      return "today";
-    }
-
-    if (isRightSelected(day, value)) {
-      return "selected";
-    }
-
+  if (isRightSelected(day, value)) {
+    return "selected";
+  }
     return "";
   }
